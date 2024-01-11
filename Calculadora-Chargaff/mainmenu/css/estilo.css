@@ -1,0 +1,955 @@
+
+/*ESTILO DA PÁGINA PRINCIPAL*/
+*{
+    margin: 0vh;
+    padding: 0vh;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+ 
+/*BODY*/
+body{
+    background-color: #3b3838 ;
+    background: fixed url(../assets/background.png) no-repeat 100%;
+    background-size: cover;
+}
+ 
+/*CABEÇALHO--------------------------------------------------------------------------------------------------------------------------------*/
+header{
+    height: 11vh;
+    background: #262626;
+    display: flex;
+    align-items: center;
+}
+.cabecalho{
+    margin-top: 0vh;
+}
+ 
+ 
+ 
+.imgmenu{
+    height: 6vh;
+}
+ 
+#titulo{
+    font-size: 2.5vw;/*42px*/
+}
+ 
+.divtitulo{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+ 
+}
+.menuicon{
+    padding: 1.5vh 4vh 1.5vh 3vh;/* 7px 15px 7px 11px*/
+   
+}
+ 
+.principal{
+    margin-bottom: 0vh;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+ 
+.botao-menu{
+    position: fixed;
+}
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+ 
+/*MENU OFFCANVAS------------------------------------------------------------------------------------------------------------------------*/
+.offcanvasclose{
+    position: absolute;
+    right: 3.3vh;
+    top: 2.2vh;
+    border: none;
+    background-color: #262626
+}
+ 
+.menu-buttons{
+    color: white;
+    text-decoration: none;
+}
+ 
+.offcanvasclose img{
+    height: 3vh;
+    border: none;
+    background-color: #262626;
+}
+ 
+.menu-btn{
+    font-size: 3.5vh;
+    display: flex;
+    justify-content: center;
+}
+ 
+.menu-buttons:hover{
+    transition: 0.3s;
+    color: #d0d1d3;
+}
+ 
+.border-top{
+    border-top: solid white 1px;
+    padding-top: 1.1vh;
+    margin-top: 1.1vh;
+    margin-left: 6vh;
+    margin-right: 6vh;
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+ 
+/*CORPO------------------------------------------------------------------------------------------------------------------------------*/
+ 
+.corpo{
+    display: flex;
+    justify-content: center;
+    padding: 10vh; /*45px*/
+    margin-bottom: 5vh;
+}
+ 
+.corpo *{
+    border-radius: 0.5vh;
+}
+.corpomobile{
+    display: flex;
+    justify-content: center;
+}
+ 
+ 
+.calculadora{ /*450px*/
+    background: #262626fc;
+    width: 70vw; /*900px*/
+    border-radius: 1vh;
+}
+ 
+.sequencias{
+    background: #262626fc;
+    width: 60vw; /*900px*/
+    border-radius: 1vh;
+}
+ 
+.inputbox{
+   
+    height: 20vw;
+    display: flex;
+    align-items: center;
+}
+ 
+.descricao-calculadora{
+    height: 10vw;
+}
+.button-input {
+    display: none; /* Oculta os inputs do tipo radio */
+}
+ 
+.button-label {
+    color: white;
+    background-color: #7bb13d;
+    font-size: 3vh;
+    height: 8vh;
+    width: 14vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    line-height: 8vh; /* Centraliza o texto verticalmente */
+}
+ 
+.button-input:checked + .button-label {
+    background-color: #5F9521; /* Estilo para quando o botão está selecionado */
+}
+ 
+.buttons{
+    height: 30vh;
+    width: 14vh;
+    margin-left: 8vh;
+    margin-top: 7vw;
+    margin-bottom: 5vw;
+}
+ 
+.button2{
+    color: white;
+    background-color: #7bb13d;
+   
+    border: #7bb13d solid 0.7vh;
+    font-size: 3vh;
+    height: 7vh;
+    width: 14vh;
+    margin-top: 1.2vh;
+    margin-bottom: 1.2vh;
+}
+ 
+.buttons2{
+    height: 30vh;
+    width: 14vh;
+    margin-left: 8vh;
+    margin-top: 5.5vw;
+    margin-bottom: 5vw;
+}
+ 
+ 
+.input-codex{
+    margin-left: 8vh;
+}
+ 
+.input-dna{
+    background-color: white;
+    color: #262626;
+    height: 30vh;
+    width: 88vh;
+    max-height: 30vh;
+    min-height: 30vh;
+    padding: 1vh;
+    font-size: 2.5vh;
+    border: 1vh #d9d9d9;
+}
+ 
+.output-material{
+    background-color: white;
+    color: #262626;
+    height: 5vh;
+    width: 100%;
+    margin: 0 auto;
+    max-height: 30vh;
+    min-height: 6vh;
+    padding: 1vh;
+    font-size: 2.5vh;
+    border: 1vh #d9d9d9;
+}
+ 
+.hr{
+    margin: 0vh 10vh 0vh 10vh;
+    border: rgba(255, 255, 255, 0.429) solid  0.1vh;
+}
+ 
+.hr2{
+    border: rgba(255, 255, 255, 0.429) solid  0.1vh;
+}
+ 
+.descricao-calculadora{
+    padding: 3vh;
+    font-size: 2.2vh;
+}
+    .resultadodna{
+        margin: 0 auto;
+        width: 130vh;
+    }
+   
+     
+   
+     
+   
+    #resultado p{
+   
+       
+   
+        margin: 0 auto;
+   
+        width: 130vh;
+   
+        margin-top: 2vh;
+   
+        margin-bottom: 0rem;
+   
+        font-size: 2.7vh;
+   
+    }
+   
+     
+   
+    #resultado {
+       margin: 5vh 0vh 7vh 0vh;
+    }
+   
+     
+   
+    .buttonsubmit{
+        color: white;
+        background-color: #7bb13d;
+        border: #7bb13d solid 0.7vh;
+        font-size: 3vh;
+        height: 6vh;  
+        width: 130vh;  
+        margin-bottom: 2vh;    
+    }
+   
+     
+   
+    .buttonsubmit:hover{  
+        background-color: #5F9521;  
+        border: #5F9521 solid 0.7vh;  
+        transition: 0.2s;  
+        height: 5.8vh;  
+        width: 129vh;    
+        font-size: 2.9vh;
+    }
+   
+     
+   
+    .submit{
+        height: 12vh;
+        display: flex;
+        justify-content: center;
+   
+    }
+   
+     
+   
+    .materiaisg{
+        text-decoration: none;
+        color: white;
+   
+    }
+ 
+ 
+/*Erwin Chargaff------------------------------------------------------------------------------------------------------------------*/
+.espaco1{
+    width: 5vw;
+}
+ 
+.chargaff{
+    border: #7bb13d 0.8vh solid;
+    background: #262626fc;
+    width: 65vw; /*900px*/
+    height: auto;
+ 
+}
+ 
+.fotochargaff{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15vh;
+    height:40vh;
+    width: 40vh;
+    background-color: #262626;
+    border-radius: 100%;
+    border: #7bb13d 0.8vh solid;
+}
+ 
+.bola-chargaff{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 100%;
+    background-color: #262626;
+    border: #7bb13d 0.88vh solid;
+    height: 35vh;
+    width: 35vh;
+}
+ 
+.quadrado{
+    position: absolute;
+    background-color: #262626;
+    height:22vh;
+    width: 29vh;
+}
+ 
+#erwin{
+    position:absolute;
+    border-radius: 100%;
+    height: 30vh;
+    width: 30vh;
+    z-index: 1;
+}
+ 
+#prote{
+    position:absolute;
+    z-index: 1;
+    height: 26vh;
+}
+ 
+.chargaff h3{
+    margin: 1vh 0vh 1vh;
+    padding: 0vh;
+    font-size: 4.2vh;
+}
+ 
+.chargaff p{
+    margin: 0vh;
+    padding: 0vh;
+    font-size: 2.5vh;
+}
+ 
+.titleerwin{
+    padding: 1vh 0vh 0vh 10vh;
+    font-size: 5vh;
+    display: flex;
+    justify-content: center;
+}
+ 
+.textcima{
+    margin-left: 30vh;
+    padding-right: 7vh;
+}
+ 
+.textbaixo{
+    padding-left: 7vh;
+    padding-right: 7vh;
+    margin-bottom: 2vh;
+}
+ 
+.chargaff a{
+    display: flex;
+    justify-content: right;
+    text-decoration: none;
+}
+ 
+.erwinbtn{
+    color: white;
+    background-color: #7bb13d;
+    border: #7bb13d solid 0.7vh;
+    font-size: 3vh;
+    height: 6vh;
+    width: auto;
+    margin-top: -1vh;
+    margin-bottom: 2vh;
+    margin-right: 2vh;
+ 
+}
+ 
+.br{
+    height: 2.5vh;
+}
+ 
+.erwinbtn:hover{
+    background-color: #5F9521;
+    border: #5F9521 solid 0.7vh;
+}
+ 
+.delimitar{
+    border-radius: 0.4rem;
+    color: black;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+    background-color: white;
+    height: 5.5rem;
+    max-height: 5.5rem;
+   min-height: 5.5rem;
+}
+/*-------------------------------------------------------------------------------------------------------------------*/
+ 
+/*DNA-----------------------------------------------------------------------------------------------------------------*/
+.postagem{
+    background: #262626fc;
+    width: 70vw; /*900px*/
+    border-radius: 1vh;
+}
+ 
+.postagem header{
+    display: flex;
+    justify-content: center;
+}
+ 
+/*-------------------------------------------------------------------------------------------------------------------*/
+ 
+ 
+ 
+/*Guia transcrição----------------------------------------------------------------------------------------------------*/
+.guia{
+    width: 70vw;
+    background-color: #262626;
+}
+ 
+.titleguia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+/*-------------------------------------------------------------------------------------------------------------------*/
+ 
+/*LOGIN-------------------------------------------------------------------------------------------------------------*/
+.inplogin{
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+}
+ 
+.loginuser{
+    display: flex;
+    flex-wrap: wrap
+}
+ 
+.labelinp{
+    display: flex;
+    justify-content: center;
+}
+ 
+.labelinp label{
+    font-size: 4vh;
+}
+ 
+.h3login{
+    display: flex;
+    justify-content: center;
+    margin: 1.5vh 0vh 1.5vh 0vh;
+}
+ 
+.inplogin{
+    margin-bottom: 3vh;
+}
+ 
+.inplogin input{
+    height: 6vh;
+    width: 40vh;
+    color: black;
+}
+ 
+.submitlogin{
+    margin: 3vh 0vh 0.5vh 0vh;
+    color: white;
+    background-color: #7bb13d;
+    border: #7bb13d solid 0.7vh;
+    border-radius:0.6vh ;
+    font-size: 3vh;
+}
+/*-------------------------------------------------------------------------------------------------------------------*/
+ 
+/*Biografia Erwin Chargaff--------------------------------------------------------------------------------------------*/
+ 
+.fotos{
+    display: flex;
+    justify-content: center;
+}
+ 
+.fotos img{
+    border: #7bb13d 0.1vh solid;
+    height: 60vh;
+    margin-top: 3vh;
+}
+.biografiacgf{
+    width: 75vw;
+    margin-top: 3vh;
+}
+ 
+.fotos{
+ 
+    display: flex;
+    justify-content: center;
+}
+ 
+.descricao-img{
+    display: flex;
+    justify-content: center;
+    margin: 1vh 0vh 3vh 50vh;
+}
+ 
+.descricao-img p{
+    font-size: 2vh;
+}
+/*-------------------------------------------------------------------------------------------------------------------*/
+ 
+/*MENU PRINCIPAL----------------------------------------------------------------------------------------------------------------*/
+.justcont{
+    display: flex;
+    justify-content: center;
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+ 
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+ 
+@media (max-width:1100px){
+   
+    body{
+        background-color: #3b3838 ;
+        background: fixed url(../assets/background_mobile.png) no-repeat 100% ;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+    }
+ 
+    .divtitulo{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-right: 7vh;
+   
+    }
+ 
+    #titulo{
+        font-size: 2.5vh;
+    }
+ 
+    header{
+        height: 7vh;
+        width: 100%;
+    }
+ 
+    .hr{
+        margin: 3vh;
+    }
+ 
+    .imgmenu{
+        height: 3vh;
+    }
+ 
+    .botao-menu{
+        position: relative;
+    }
+ 
+    .menuicon{
+        padding: 1vh 2vh 1vh 2vh;/* 7px 15px 7px 11px*/
+    }
+ 
+     .corpo{
+        display: flex;
+        justify-content: center;
+        padding: 0vh; /*45px*/
+    }
+ 
+    .calculadora{
+        height: auto;
+        background: #262626fc;
+        width: 90vw; /*900px*/
+ 
+    }
+ 
+    .sequencias{
+        height: auto;
+        background: #262626fc;
+        width: 90vw; /*900px*/
+    }
+   
+    .inputbox{
+        height: 35vh;
+        width: 90vw;
+ 
+    }
+    .inputbox{
+        display: block;
+        align-items: baseline;
+    }
+ 
+    .descricao-calculadora{
+        font-size: 1.5vh;
+        height:15vh;
+        border: none;
+    }
+    .buttons{
+        margin-left: 0vh;
+        display: flex;
+        justify-content: center;
+        height: 1vh;
+        width: 100% ;
+        margin-top: 1vw;
+        margin-bottom: 0vw;
+        padding:0vh 2vh 0vh 2vh ;
+    }
+ 
+    .button-input {
+        display: none;
+    }
+   
+    .button-label {
+        height: 4vh;
+        width: 100%;
+        margin-left: 1.5vh;
+        margin-right: 1.5vh;
+        font-size: 2vh;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        line-height: 4vh; /* Centraliza o texto verticalmente */
+    }
+ 
+    .corpo{
+        padding: 3vh; /*45px*/
+    }
+    .input-codex{
+        margin-left: 0vh;
+        display: flex;
+        justify-content: center;
+        margin-top: 10vh;
+        width: 100%;
+        padding: 0vh 4vh 0vh 4vh;
+    }
+ 
+    .input-dna{
+        height: 20vh;
+        width: 100%;
+        font-size: 2vh;
+        max-height: 20vh;
+        min-height: 20vh;
+    }
+ 
+    .output-material{
+        height: 10vh;
+        width: 100%;
+        font-size: 2vh;
+        max-height: 10vh;
+        min-height: 10vh;
+    }
+   
+    .button2{
+        height: 4vh;
+        border: #7bb13d solid 0.7vh;
+        width:100%;
+        margin-left: 1vh;
+        margin-right: 1vh;
+        font-size: 2vh;
+    }
+ 
+    #button7{
+        font-size: 1.7vh;
+    }
+    #button6{
+        font-size: 1.9vh;
+    }
+    #button5{
+        font-size: 1.6vh;
+    }
+    .buttons2{
+        margin-left: 0vh;
+        display: flex;
+        justify-content: center;
+        height: 1vh;
+        width: 100% ;
+        margin-top: 1vw;
+        margin-bottom: 0vw;
+        padding:0vh 1vh 0vh 1vh ;
+    }
+ 
+    .buttonsubmit{
+ 
+        width: 36vh;
+ 
+        font-size: 2vh;
+ 
+        height: 4vh;
+ 
+    }
+ 
+ 
+ 
+    .submit{
+ 
+       height: 6vh;
+ 
+    }
+ 
+    .buttonsubmit:hover{
+ 
+        background-color: #7bb13d;
+ 
+        border: #7bb13d solid 0.7vh;
+ 
+        height: 4vh;
+ 
+        width: 36vh;
+ 
+        font-size: 2vh;
+ 
+    }
+ 
+    #resultado p{
+ 
+        font-size: 2vh;
+ 
+        width: 40vh;
+ 
+    }
+ 
+    .resultadodna{
+ 
+        width: 40vh;
+ 
+        height: 12vh;
+ 
+    }
+ 
+/*Erwin Chargaff*/
+ 
+.corpomobile{
+    display: block;
+}
+ 
+.espaco1{
+    margin-top: 0vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 10vh;
+    width: 90vw;
+}
+ 
+.chargaff{  
+    border: #7bb13d 0.5vh solid;
+    background: #262626fc;
+    width: 90vw; /*900px*/
+    height: auto;
+}
+ 
+.fotochargaff{
+    margin-bottom: -15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height:30vh;
+    width: 30vh;
+    background-color: #262626;
+    border-radius: 100%;
+    border: #7bb13d 0.5vh solid;
+}
+ 
+#erwin{
+    border: #7bb13d 0.5vh solid;
+    border-radius: 100%;
+    height: 27vh;
+    width: 27vh;
+}
+ 
+.titleerwin{
+    padding: 15vh 0vh 0vh 0vh;
+    font-size: 4vh;
+    display: flex;
+    justify-content: center;
+}
+ 
+.titleerwin h3{
+    font-size: 3vh;
+}
+ 
+.textcima{
+    margin-left: 5vh;
+    padding-right: 5vh;
+    font-size: 2vh;
+}
+ 
+.textbaixo{
+    padding-left: 5vh;
+    padding-right: 5vh;
+    font-size: 2vh;
+}
+ 
+.chargaff a{
+    justify-content: center;
+}
+ 
+.erwinbtn{
+    margin-right: 0vh;
+    font-size: 2.5vh
+}
+ 
+.quadrado{
+    position: absolute;
+    background-color: #262626;
+    height:0vh;
+    width: 0vh;
+}
+ 
+.bola-chargaff{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 100%;
+    background-color: #262626;
+    height: 0vh;
+    width: 0vh;
+}
+ 
+.corpologin{
+    height: 50vh;
+}
+ 
+.inplogin input{
+    height: 5vh;
+    width: 30vh;
+    color: black;
+}
+ 
+.labelinp label{
+    font-size: 3vh;
+}
+ 
+.h3login{
+    font-size: 3.5vh;
+}
+ 
+.submitlogin{
+    font-size: 2.5vh;
+}
+ 
+.fotos img{
+    height: 28vh;
+}
+.descricao-img{
+    margin-left: 0vh;
+}
+ 
+ .chargaff.h3biografia{
+    font-size: 1vh;
+    padding-left: 20vh;
+ 
+}
+}
+ 
+@media (max-height:652px){
+.input-dna{
+    width: 110vh;
+}
+}
+ 
+@media(max-width:1134px){
+    .input-dna{
+        width: 80vh;
+    }
+}
+ 
+@media(max-width:650px){
+    .fotos img{
+        height: 27vh;
+    }
+}
+ 
+@media(max-width:525px){
+    .fotos img{
+        height: 20vh;
+    }
+}
+ 
+@media(max-width:525px){
+    .fotos img{
+        height: 20vh;
+    }
+}
+ 
+ 
+ 
+ 
+ 
+@media (max-height:652px){
+.input-dna{
+    width: 108vh;
+ 
+}
+ 
+}
+ 
+ 
+ 
+@media(max-width:1170px){
+    .input-dna{
+        width: 80vh;
+    }
+ 
+}
+ 
+@media(max-width:1200px) and (max-height:600px){
+    .output-material{
+        width: 100vh;
+    }
+    .resultadodna{
+        margin: 0 auto;
+        width: 100vh;
+    }
+}
+ 
+@media (max-height:1500px){
+    .input-dna{
+    width: 100vh;
+    }
+}

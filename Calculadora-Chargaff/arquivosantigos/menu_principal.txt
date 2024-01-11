@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU PRINCIPAL</title>
+    <style>
+        *{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<?php
+    session_start();
+    //include_once('header.php');
+    if($_SESSION['status'] === 'logado'){
+
+///////////////////////////////////////////////////////////////////////////
+        $loginuser = $_SESSION['loginuser']; //o loginuser esta sendo armazenado na variavel para posteriormente ser utilizado para a consulta de ID
+
+        try{
+
+            include_once('../Classes/Usuario.class.php');
+            include_once('../Classes/Sequencia.class.php');
+
+        $usuario = new Usuario();
+        $salvar = new Sequencia();
+        $id = $usuario->consultaId($loginuser); //a procedure salva a sequencia de acordo com o id do usuário
+        //a procedure de consulta ID é chamada com base no nome do usuário
+
+        //trqtamento caso $id == null
+            if(empty($id) || is_string($id)){
+                throw new Exception("Ocorreu um erro inesperado. Contate o ADM!");
+
+            }else{//executar normalmente
+
+    foreach($id as $retorno){
+        
+        //tratamento de erro caso $retorno == null
+        if(empty($retorno)){
+            throw new Exception("Ocorreu um erro inesperado. Contate o ADM!");
+
+        }else{//retornar normalmente
+         $retorno[0]; //retorna o ID do usuário que está logado para a consulta de sequencias
+        }
+    }
+}
+
+}catch(Exception $e){
+    echo $e ->getMessage();
+}
+    }else{
+        header('Location: ../redireciona/redireciona.php');
+    }
+
+    
+?>
+
+<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+
+<h3><label for="idsequencia">DIGITE o DNA</label><input type="text" name="dna" id="idsequenica"></h3>
+<label for="idrna">DIGITE O RNA</label><input type="text" name="rna" id="idrna">
+<!-- é aqui onde ele recebe a sequencia desejada do usuário -->
+
+<!-- é necessário haver um input type hidden para enviar o idloginuser ao submeter o form-->
+<input type="hidden" name="idlogin" value="<?php echo isset($retorno[0]) ? htmlspecialchars($retorno[0]) : "Ocorreu um erro inesperado."; ?>">
+
+ 
+<input type="submit" value="SALVAR SEQUENCIA" name="enviar"> <!-- submit form -->
+
+<p>
+    <?php      
+    try{
+
+        //tratamento de erro para checar se $retorno foi enviada com valor
+    if(isset($retorno[0])){
+
+    //anchor mandando para a pagina do lista sequencia com base no ID do usuário logado
+    echo "<a href='listasequencia.php?codigo=" . htmlspecialchars($retorno[0]) . "'>Minhas sequencias</a>";
+    }else{
+        throw new Exception("Ocorreu um erro inesperado. Contate o ADM!");
+    }
+}catch(Exception $e){
+    echo $msg = $e->getMessage();
+}
+
+    ?>
+</p>
+
+</form>
+
+<?php
+
+if(isset($_POST['enviar'])){
+
+    try{
+   $idloginuser = filter_input(INPUT_POST,'idlogin',FILTER_SANITIZE_SPECIAL_CHARS); //pega a variavel $idloginuser do input hidden
+   $dna = filter_input(INPUT_POST,'dna',FILTER_SANITIZE_SPECIAL_CHARS); //pega os dados digitados pelos usuários no campo dna
+   $rna = filter_input(INPUT_POST,'rna',FILTER_SANITIZE_SPECIAL_CHARS); //pega os dados digitados pelos usuários no campo rna
+
+
+   //tratamento caso $idloginuser seja vazio
+   if(empty($idloginuser)){
+    throw new Exception("Ocorreu um erro inesperado. Contate o ADM!");//gera um erro
+
+   }else{ //executa o programa normalmente
+
+    //verifica se os dois campos foram preenchidos juntos
+if(!$dna == null && !$rna == null){
+    echo "Digite apenas em um dos campos.";
+
+}else{//caso haja só um ele executará normalmente
+
+   if(empty($dna)){ //se o campo de DNA for vazio, o programa vai entender que o usuário desejará salvar o RNA
+    if(!$rna == null){ //se o RNA não for vazio, ele chamará a função
+        echo $salvar->insereSequencia(htmlspecialchars($rna),'RNA',htmlspecialchars($idloginuser));
+
+    }else{ //se for vazio, ele exibirá uma mensagem para que o usuário digite alguma sequencia
+     throw new Exception("Insira uma sequência nos campos DNA ou RNA.");
+    }
+   }else{
+
+    //se o DNA não for vazio, o programa entende que o usuário desejará salvar o DNA
+    echo $salvar->insereSequencia(htmlspecialchars($dna),'DNA',htmlspecialchars($idloginuser));
+    //a sequencia é inserida com seu tipo e com o id do usuário, para quando o usuário
+    //desejar ver a listagem de suas sequencias, o id é quem retorna.
+   }
+}
+   }
+
+}catch(Exception $e){
+    echo $msg = $e->getMessage();
+}
+
+}
+
+?>
+
+</body>
+</html>

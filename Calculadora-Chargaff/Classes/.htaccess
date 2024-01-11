@@ -1,0 +1,17 @@
+Options -Indexes
+
+<Files "Usuario.class.php"> 
+    Deny from all
+</Files>
+
+<Files "Sequencia.class.php">
+    Deny from all
+</Files>
+
+<Files "BancoDados.class.php">
+    Deny from all
+</Files>
+
+<Files "Sequencia.class.php">
+    Deny from all
+</Files>
